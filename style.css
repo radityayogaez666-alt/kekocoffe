@@ -251,6 +251,58 @@ outline-offset: 0;
 resize: vertical; 
 }
 
+.kolom-password {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.kolom-password label,
+.kolom-password .pesan-galat {
+  grid-column: 1;
+}
+
+.kolom-password input {
+  grid-column: 1;
+  grid-row: 2;
+  padding-right: 64px;
+}
+
+.tombol-password {
+  display: inline-flex;
+  grid-column: 1;
+  grid-row: 2;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  z-index: 1;
+  width: 44px;
+  min-height: 44px;
+  padding: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--teks-redup);
+  cursor: pointer;
+}
+
+.tombol-password:hover {
+  color: var(--hijau-tua);
+}
+
+.tombol-password svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.tombol-password[aria-pressed="true"] .garis-coret-mata {
+  display: none;
+}
+
 /* ==== FITUR VALIDASI ISIAN ==== */
 .kolom-isian :is(input, select, textarea):user-invalid { 
 border-color: var(--merah); 
